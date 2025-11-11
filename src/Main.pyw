@@ -18,7 +18,7 @@ import PyQt5.QtWidgets as qw
 import requests
 from PyQt5.QtGui import QKeySequence, QIcon, QBrush, QColor
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
-from playsound import playsound
+from playsound3 import playsound
 
 import Flashback as flashback
 from Dictionary import characterDict
