@@ -30,7 +30,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv sync
+          uv sync --no-dev
+        env:
+          UV_RESOLUTION: highest
 
       - name: Build with PyInstaller
         run: |
@@ -53,9 +55,9 @@ jobs:
       matrix:
         include:
           - arch: arm64
-            runner: macos-14  # Apple Silicon
+            runner: macos-15  # Apple Silicon
           - arch: x64
-            runner: macos-13  # Intel
+            runner: macos-15-large  # Intel
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout code
@@ -73,11 +75,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --system -r requirements.txt
+          uv sync --no-dev
+        env:
+          UV_RESOLUTION: highest
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller Main_MacOS.spec
+          uv run pyinstaller Main_MacOS.spec
 
       - name: Create archive
         run: |
