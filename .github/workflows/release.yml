@@ -30,7 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv sync --no-dev
+          uv pip install -r requirements.txt
         env:
           UV_RESOLUTION: highest
 
@@ -57,7 +57,7 @@ jobs:
           - arch: arm64
             runner: macos-15  # Apple Silicon
           - arch: x64
-            runner: macos-15-large  # Intel
+            runner: macos-15  # Intel
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout code
