@@ -37,7 +37,7 @@ class ListManager():
         'harukiDBurl' : "https://bot-assets.haruki.seiunx.com/master-jp/{}.json?t=0",
         'harukiDBGHurl': "https://raw.githubusercontent.com/Team-Haruki/haruki-sekai-master/refs/heads/main/master/{}.json",
 
-        'bestBaseUrl' : "https://minio.dnaroma.eu/sekai-jp-assets/",
+        'bestBaseUrl' : "https://storage.sekai.best/sekai-jp-assets/",
         'uniBaseUrl' : "https://assets.unipjsk.com/",
         'harukiJPBaseUrl' : "https://sekai-assets-bdf29c81.seiunx.net/jp-assets/",
         'harukiCNBaseUrl' : "https://bot-assets.haruki.seiunx.com/assets/",
